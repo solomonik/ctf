@@ -160,6 +160,33 @@ namespace CTF_int {
 
 
   double contraction::estimate_time(){
+    /*bool is_inner = false;
+    is_inner = can_fold();
+    ctr * ctrf;
+    int stat = map(&ctrf, false);
+
+    A->set_padding();
+    B->set_padding();
+    C->set_padding();
+    if (stat == ERROR) {
+      printf("Failed to map tensors to physical grid\n");
+      return ERROR;
+    }
+    if (is_inner){
+      iparam prm;
+      TAU_FSTART(map_fold);
+      prm = map_fold();
+      TAU_FSTOP(map_fold);
+      ctrf = construct_ctr(1, &prm);
+    } else {
+      print(); 
+      ctrf = construct_ctr();
+    }
+    double est_time = ctrf->est_time_rec(1);
+    delete ctrf;
+    return est_time;*/
+    return 1.E-3;
+
     //int ret, j, need_remap, d;
     //int * old_phase_A, * old_phase_B, * old_phase_C;
     //topology * old_topo_A, * old_topo_B, * old_topo_C;
@@ -208,7 +235,6 @@ namespace CTF_int {
     //TAU_FSTART(get_best_sel_map);
     //get_best_sel_map(dA, dB, dC, old_topo_A, old_topo_B, old_topo_C, old_map_A, old_map_B, old_map_C, ttopo_sel, gbest_time_sel);
     //return gbest_time_sel;
-    return 1.E-3;
   }
 
   int contraction::is_equal(contraction const & os){
